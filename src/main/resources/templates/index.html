@@ -1,17 +1,16 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <title>Doctor Sign In</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-    <nav>
-        <span>Doctor Secret Service</span>
-        <a href="/">Sign In</a>
-    </nav>
-</header>
+<header th:replace="header.html :: top"></header>
+<div class="content">
 <form method="get" action="doctor">
     <fieldset>
         <label for="name">Your doctor's name: </label>
@@ -20,16 +19,10 @@
         <label for="number">Your doctor's number: </label>
         <input id="number" name="number" type="number" placeholder="13">
         <hr>
-        <input type="submit" value="Sign In">
+        <input class="btn" type="submit" value="Sign In">
     </fieldset>
 </form>
-<footer>
-    <ul>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">TARDIS</a></li>
-    </ul>
-    <span>Copyright BBC/Terry Nation 1963</span>
-</footer>
+</div>
+<footer th:replace="footer.html :: footer"></footer>
 </body>
 </html>
